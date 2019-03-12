@@ -5,10 +5,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 
 import com.example.lpdimandroid.bean.api.League;
-import com.example.lpdimandroid.bean.api.Leagues;
+import com.example.lpdimandroid.bean.api.SearchLeagues;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -29,7 +28,7 @@ public class Home extends AppCompatActivity {
         OkHttpClient client = new OkHttpClient();
         LinearLayout myLayout = findViewById(R.id.leagues);
         final Request request = new Request.Builder()
-                .url("https://www.thesportsdb.com/api/v1/json/1/all_leagues.php")
+                .url("https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php?s=Soccer")
                 .build();
         client.newCall(request).enqueue(new Callback() {
             @Override
@@ -41,10 +40,10 @@ public class Home extends AppCompatActivity {
             public void onResponse(Call call, Response response) throws IOException {
                 final Gson gson = new Gson();
                 final Reader r = response.body().charStream();
-                final Leagues leagues = gson.fromJson(r, Leagues.class);
+                final SearchLeagues leagues = gson.fromJson(r, SearchLeagues.class);
 
 
-                for (final League league : leagues.getLeagues()) {
+                for (final League league : leagues.getCountrys()) {
                     final String idLeague = league.getIdLeague();
                     Button myButton = new Button(Home.this);
                     myButton.setText(league.getStrLeague());
