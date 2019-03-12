@@ -1,8 +1,10 @@
 package com.example.lpdimandroid;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
@@ -33,7 +35,7 @@ public class Home extends AppCompatActivity {
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                Log.e("Error", "Impossible de recuperer les leagues");
+                Log.e("Error", "Impossible de recuperer les leagues", e);
             }
 
             @Override
@@ -48,6 +50,13 @@ public class Home extends AppCompatActivity {
                     if (league.getStrDivision().equals("0")) {
                         Button myButton = new Button(Home.this);
                         myButton.setText(league.getStrLeague());
+                        myButton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent i = new Intent(Home.this,LeagueActivity.class);
+                                startActivity(i);
+                            }
+                        });
 
                         Home.this.runOnUiThread(new Runnable() {
                             @Override
