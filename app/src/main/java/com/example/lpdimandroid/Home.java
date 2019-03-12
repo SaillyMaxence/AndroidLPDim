@@ -45,7 +45,7 @@ public class Home extends AppCompatActivity {
 
                 for (final League league : leagues.getCountrys()) {
                     final String idLeague = league.getIdLeague();
-                    if (league.getStrSport().equals("Soccer")) {
+                    if (league.getStrDivision().equals(1)) {
                         Button myButton = new Button(Home.this);
                         myButton.setText(league.getStrLeague());
 
