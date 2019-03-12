@@ -4,6 +4,7 @@ public class League {
 
     String idLeague;
     String strLeague;
+    String strSport;
 
     public String getIdLeague() {
         return idLeague;
@@ -20,4 +21,14 @@ public class League {
     public void setStrLeague(String strLeague) {
         this.strLeague = strLeague;
     }
+
+    public String getStrSport() {
+        return strSport;
+    }
+
+    public void setStrSport(String strSport) {
+        this.strSport = strSport;
+    }
+
+
 }
