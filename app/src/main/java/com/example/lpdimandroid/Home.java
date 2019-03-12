@@ -46,16 +46,17 @@ public class Home extends AppCompatActivity {
 
                 for (final League league : leagues.getLeagues()) {
                     final String idLeague = league.getIdLeague();
-                    Button myButton = new Button(Home.this);
-                    myButton.setText(league.getStrLeague());
+                    if (league.getStrSport().equals("Soccer")) {
+                        Button myButton = new Button(Home.this);
+                        myButton.setText(league.getStrLeague());
 
-                    Home.this.runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            myLayout.addView(myButton);
-                        }
-                    });
-
+                        Home.this.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                myLayout.addView(myButton);
+                            }
+                        });
+                    }
                 }
 
             }
