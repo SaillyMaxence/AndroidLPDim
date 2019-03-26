@@ -47,11 +47,11 @@ public class club extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 final Gson gson = new Gson();
-                final Reader r = response.body().charStream();
+                final String r = response.body().string();
                 final ClubByLeague clubs = gson.fromJson(r, ClubByLeague.class);
 
 
-                for (final Club club : clubs.getClubs()) {
+                for (final Club club : clubs.getTeams()) {
                     final String idTeam = club.getIdTeam();
 
                         Button myButton = new Button(club.this);
