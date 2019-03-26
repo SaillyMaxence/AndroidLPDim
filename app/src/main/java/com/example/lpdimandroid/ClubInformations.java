@@ -64,8 +64,16 @@ public class ClubInformations extends AppCompatActivity {
                         public void run() {
                             TextView teamName = findViewById(R.id.teamName);
                             ImageView teamLogo = findViewById(R.id.teamLogo);
+                            TextView teamDescription = findViewById(R.id.teamDescription);
                             Picasso.get().load(club.getStrTeamBadge()).into(teamLogo);
                             teamName.setText(club.getStrTeam());
+                            if(club.getStrDescriptionFR() == null){
+                                teamDescription.setText("Aucune description disponible");
+                            }else {
+                                teamDescription.setText(club.getStrDescriptionFR());
+                            }
+                            ImageView teamJersey = findViewById(R.id.teamJersey);
+                            Picasso.get().load(club.getStrTeamJersey()).into(teamJersey);
                         }
                     });
 

@@ -11,6 +11,8 @@ public class Club {
     String idLeague;
     String strLeague;
     String strTeamBadge;
+    String strDescriptionFR;
+    String strTeamJersey;
 
 
     public String getIdTeam() {
@@ -53,5 +55,19 @@ public class Club {
         this.strTeamBadge = strTeamBadge;
     }
 
+    public String getStrDescriptionFR() {
+        return strDescriptionFR;
+    }
 
+    public void setStrDescriptionFR(String strDescriptionFR) {
+        this.strDescriptionFR = strDescriptionFR;
+    }
+
+    public String getStrTeamJersey() {
+        return strTeamJersey;
+    }
+
+    public void setStrTeamJersey(String strTeamJersey) {
+        this.strTeamJersey = strTeamJersey;
+    }
 }
