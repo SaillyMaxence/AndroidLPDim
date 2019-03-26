@@ -8,6 +8,9 @@ public class Club {
 
     String idTeam;
     String strTeam;
+    String idLeague;
+    String strLeague;
+
 
     public String getIdTeam() {
         return idTeam;
@@ -23,6 +26,22 @@ public class Club {
 
     public void setStrTeam(String strTeam) {
         this.strTeam = strTeam;
+    }
+
+    public String getIdLeague() {
+        return idLeague;
+    }
+
+    public void setIdLeague(String idLeague) {
+        this.idLeague = idLeague;
+    }
+
+    public String getStrLeague() {
+        return strLeague;
+    }
+
+    public void setStrLeague(String strLeague) {
+        this.strLeague = strLeague;
     }
 
 

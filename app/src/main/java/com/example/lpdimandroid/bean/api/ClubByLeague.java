@@ -10,10 +10,10 @@ public class ClubByLeague {
     private List<Club> clubs;
 
     public SearchClubs() {
-        setClubs(new ArrayList<League>());
+        setClubs(new ArrayList<Club>());
     }
 
-    public List<League> getCountrys() {
+    public List<League> getClubs() {
         return clubs;
     }
 
