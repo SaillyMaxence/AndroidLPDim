@@ -55,6 +55,7 @@ public class Home extends AppCompatActivity {
                             public void onClick(View v) {
                                 Intent i = new Intent(Home.this,LeagueActivity.class);
                                 i.putExtra("nomChampionnat", league.getStrLeague());
+                                i.putExtra("leagueId",league.getIdLeague());
                                 startActivity(i);
                             }
                         });
