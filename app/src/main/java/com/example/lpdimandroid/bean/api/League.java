@@ -2,40 +2,24 @@ package com.example.lpdimandroid.bean.api;
 
 public class League {
 
-    String idLeague;
-    String strLeague;
-    String strSport;
-    String strDivision;
+    String idTeam;
+    String strTeam;
 
-    public String getIdLeague() {
-        return idLeague;
+    public String getIdTeam() {
+        return idTeam;
     }
 
-    public void setIdLeague(String idLeague) {
-        this.idLeague = idLeague;
+    public void setIdTeam(String idTeam) {
+        this.idTeam = idTeam;
     }
 
-    public String getStrLeague() {
-        return strLeague;
+    public String getStrTeam() {
+        return strTeam;
     }
 
-    public void setStrLeague(String strLeague) {
-        this.strLeague = strLeague;
+    public void setStrTeam(String strTeam) {
+        this.strTeam = strTeam;
     }
-
-    public String getStrSport() {
-        return strSport;
-    }
-
-    public void setStrSport(String strSport) {
-        this.strSport = strSport;
-    }
-
-    public String getStrDivision() {
-        return strDivision;
-    }
-
-    public void setStrDivision(String strDivision) {this.strDivision = strDivision;}
 
 
 }
