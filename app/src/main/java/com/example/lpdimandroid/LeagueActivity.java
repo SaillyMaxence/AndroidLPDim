@@ -15,7 +15,7 @@ public class LeagueActivity extends AppCompatActivity {
 
         // Récupération des params
         Intent myIntent = getIntent();
-        int leagueId = Integer.parseInt(myIntent.getStringExtra("Leagueid"));
+        int leagueId = Integer.parseInt(myIntent.getStringExtra("leagueId"));
         String leagueName = myIntent.getStringExtra("nomChampionnat");
 
         Button club = findViewById(R.id.club);
