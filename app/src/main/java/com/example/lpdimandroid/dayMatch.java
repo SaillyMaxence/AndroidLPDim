@@ -1,12 +1,15 @@
 package com.example.lpdimandroid;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.service.autofill.FieldClassification;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.lpdimandroid.bean.api.Match;
 import com.example.lpdimandroid.bean.api.SearchMatch;
@@ -58,13 +61,15 @@ public class dayMatch extends AppCompatActivity {
                 final String r = response.body().string();
                 final SearchMatch match = gson.fromJson(r,SearchMatch.class);
                 if(match.getEvents() == null){
-                    TextView matchOfTheDay = new TextView(dayMatch.this);
-                    matchOfTheDay.setText("Pas de match aujourd'hui");
+                    Context context = getApplicationContext();
+                    CharSequence text = "pas de match aujourd'hui";
+                    int duration = Toast.LENGTH_LONG;
 
                     dayMatch.this.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            myLayout.addView(matchOfTheDay);
+                            Toast toast = Toast.makeText(context,text,duration);
+                            toast.show();
                         }
                     });
                 }else{
@@ -72,7 +77,7 @@ public class dayMatch extends AppCompatActivity {
                         final String nameLeague = event.getStrEvent();
 
                         TextView matchOfTheDay = new TextView(dayMatch.this);
-                        matchOfTheDay.setText(event.getStrEvent());
+                        matchOfTheDay.setText(event.getStrHomeTeam()+" "+ event.getStrTime() +" "+event.getStrAwayTeam());
 
 
                         dayMatch.this.runOnUiThread(new Runnable() {
