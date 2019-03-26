@@ -65,7 +65,7 @@ public class ClubInformations extends AppCompatActivity {
                             TextView teamName = findViewById(R.id.teamName);
                             ImageView teamLogo = findViewById(R.id.teamLogo);
                             Picasso.get().load(club.getStrTeamBadge()).into(teamLogo);
-                            teamName.setText(club.setStrTeam());
+                            teamName.setText(club.getStrTeam());
                         }
                     });
 
