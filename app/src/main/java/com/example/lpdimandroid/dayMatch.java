@@ -12,9 +12,12 @@ import com.example.lpdimandroid.bean.api.Match;
 import com.example.lpdimandroid.bean.api.SearchMatch;
 import com.google.gson.Gson;
 
+import org.w3c.dom.Text;
+
 import java.io.IOException;
 import java.io.Reader;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import okhttp3.Call;
@@ -31,7 +34,7 @@ public class dayMatch extends AppCompatActivity {
         setContentView(R.layout.activity_day_match);
 
         Intent myIntent = getIntent();
-        int leagueId = Integer.parseInt(myIntent.getStringExtra("leagueId"));
+      //  int leagueId = Integer.parseInt(myIntent.getStringExtra("leagueId"));
         String leagueName = myIntent.getStringExtra("leagueName");
         OkHttpClient client = new OkHttpClient();
         LinearLayout myLayout = findViewById(R.id.matchOfTheDay);
@@ -52,15 +55,11 @@ public class dayMatch extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 final Gson gson = new Gson();
-                final Reader r = response.body().charStream();
+                final String r = response.body().string();
                 final SearchMatch match = gson.fromJson(r,SearchMatch.class);
-
-                for(final Match event : match.getEvents()){
-                    final String nameLeague = event.getStrEvent();
-
+                if(match.getEvents() == null){
                     TextView matchOfTheDay = new TextView(dayMatch.this);
-                    matchOfTheDay.setText(event.getStrEvent());
-
+                    matchOfTheDay.setText("Pas de match aujourd'hui");
 
                     dayMatch.this.runOnUiThread(new Runnable() {
                         @Override
@@ -68,7 +67,22 @@ public class dayMatch extends AppCompatActivity {
                             myLayout.addView(matchOfTheDay);
                         }
                     });
+                }else{
+                    for(final Match event : match.getEvents()){
+                        final String nameLeague = event.getStrEvent();
 
+                        TextView matchOfTheDay = new TextView(dayMatch.this);
+                        matchOfTheDay.setText(event.getStrEvent());
+
+
+                        dayMatch.this.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                myLayout.addView(matchOfTheDay);
+                            }
+                        });
+
+                    }
                 }
             }
         });
