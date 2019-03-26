@@ -1,5 +1,6 @@
 package com.example.lpdimandroid;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,8 +13,12 @@ public class LeagueActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_league);
 
-        Button club = findViewById(R.id.club);
+        // Récupération des params
+        Intent myIntent = getIntent();
+        int leagueId = Integer.parseInt(myIntent.getStringExtra("Leagueid"));
+        String leagueName = myIntent.getStringExtra("nomChampionnat");
 
+        Button club = findViewById(R.id.club);
         club.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
