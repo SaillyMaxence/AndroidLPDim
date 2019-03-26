@@ -15,14 +15,17 @@ public class LeagueActivity extends AppCompatActivity {
 
         // Récupération des params
         Intent myIntent = getIntent();
-        int leagueId = Integer.parseInt(myIntent.getStringExtra("Leagueid"));
+        int leagueId = Integer.parseInt(myIntent.getStringExtra("leagueId"));
         String leagueName = myIntent.getStringExtra("nomChampionnat");
 
         Button club = findViewById(R.id.club);
         club.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // club de la league
+                Intent club = new Intent(LeagueActivity.this,club.class);
+                club.putExtra("leagueId",leagueId);
+                club.putExtra("leagueName",leagueName);
+                startActivity(club);
             }
         });
 
@@ -31,6 +34,10 @@ public class LeagueActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Afficher les match du jour
+                Intent dayMatch = new Intent(LeagueActivity.this,dayMatch.class);
+                dayMatch.putExtra("leagueId",leagueId);
+                dayMatch.putExtra("leagueName",leagueName);
+                startActivity(dayMatch);
             }
         });
 
