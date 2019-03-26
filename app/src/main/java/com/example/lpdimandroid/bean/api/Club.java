@@ -10,6 +10,7 @@ public class Club {
     String strTeam;
     String idLeague;
     String strLeague;
+    String strTeamBadge;
 
 
     public String getIdTeam() {
@@ -42,6 +43,14 @@ public class Club {
 
     public void setStrLeague(String strLeague) {
         this.strLeague = strLeague;
+    }
+
+    public String getStrTeamBadge() {
+        return strTeamBadge;
+    }
+
+    public void setStrTeamBadge(String strTeamBadge) {
+        this.strTeamBadge = strTeamBadge;
     }
 
 
