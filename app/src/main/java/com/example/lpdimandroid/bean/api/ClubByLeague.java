@@ -9,13 +9,9 @@ public class ClubByLeague {
 
     private List<Club> clubs;
 
-    public SearchClubs() {
-        setClubs(new ArrayList<Club>());
-    }
+    public ClubByLeague() { setClubs(new ArrayList<Club>());}
 
-    public List<League> getClubs() {
-        return clubs;
-    }
+    public List<Club> getClubs() {return clubs;}
 
     public void setClubs(List<Club> clubs) {
         this.clubs = clubs;
