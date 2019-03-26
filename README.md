@@ -20,8 +20,15 @@ Les fonctionnalités disponibles sont :
 
 * Pouvoir regarder les différents championnats selon le pays.
 * Avoir la liste des différents clubs d'un pays.
+* Avoir les informations d'un club.
 * Voir les différents matchs du jour selon le championnat sélectionné au préalable.
 
 
 L'API utilisé pour ce projet est : TheSportsDB.
+
+## Documentation 
+
+Une documentation technique est mise à disposition, ainsi que les maquettes du projet.
+Les maquettes sont cliquables, vous pouvez changer de page en cliquant sur les différents boutons.
+ps : les maquettes peuvent être un peu différentes des différentes pages.
 

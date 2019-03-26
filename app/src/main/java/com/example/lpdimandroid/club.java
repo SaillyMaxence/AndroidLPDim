@@ -59,7 +59,9 @@ public class club extends AppCompatActivity {
                         myButton.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-
+                                Intent i = new Intent(club.this,ClubInformation.class);
+                                i.putExtra("clubId",club.getIdTeam());
+                                startActivity(i);
                             }
                         });
 
