@@ -16,11 +16,22 @@
             android:layout_height="100dp"
             android:paddingTop="20dp"/>
 
+
+
         <TextView
             android:id="@+id/teamName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"/>
+
+
+        <Button
+            android:id="@+id/playerTeam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Joueurs"/>
+
+
 
         <TextView
             android:id="@+id/teamDescription"

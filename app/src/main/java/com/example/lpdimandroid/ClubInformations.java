@@ -74,6 +74,16 @@ public class ClubInformations extends AppCompatActivity {
                             }
                             ImageView teamJersey = findViewById(R.id.teamJersey);
                             Picasso.get().load(club.getStrTeamJersey()).into(teamJersey);
+
+                            Button myButton = findViewById(R.id.playerTeam);
+                            myButton.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent playersClub = new Intent(ClubInformations.this,PlayerActivity.class);
+                                    playersClub.putExtra(PlayerActivity.EXTRA_CLUB_ID,clubId);
+                                    startActivity(playersClub);
+                                }
+                            });
                         }
                     });
 
