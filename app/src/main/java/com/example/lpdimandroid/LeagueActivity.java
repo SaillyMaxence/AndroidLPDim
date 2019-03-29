@@ -22,9 +22,9 @@ public class LeagueActivity extends AppCompatActivity {
         club.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent club = new Intent(LeagueActivity.this,club.class);
-                club.putExtra("leagueId",leagueId);
-                club.putExtra("leagueName",leagueName);
+                Intent club = new Intent(LeagueActivity.this, club.class);
+                club.putExtra("leagueId", leagueId);
+                club.putExtra("leagueName", leagueName);
                 startActivity(club);
             }
         });
@@ -34,10 +34,20 @@ public class LeagueActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Afficher les match du jour
-                Intent dayMatch = new Intent(LeagueActivity.this,dayMatch.class);
-                dayMatch.putExtra("leagueId",leagueId);
-                dayMatch.putExtra("leagueName",leagueName);
+                Intent dayMatch = new Intent(LeagueActivity.this, dayMatch.class);
+                dayMatch.putExtra("leagueId", leagueId);
+                dayMatch.putExtra("leagueName", leagueName);
                 startActivity(dayMatch);
+            }
+        });
+
+        Button lastMatch = findViewById(R.id.lastMatch);
+        lastMatch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent lastMatch = new Intent(LeagueActivity.this, LastMatch.class);
+                lastMatch.putExtra(LastMatch.EXTRA_LEAGUE_ID, leagueId);
+                startActivity(lastMatch);
             }
         });
 

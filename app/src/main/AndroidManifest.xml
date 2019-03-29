@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".LastMatch"></activity>
         <activity android:name=".club" />
         <activity android:name=".dayMatch" />
         <activity android:name=".LeagueActivity" />
@@ -22,7 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ClubInformations"></activity>
+        <activity android:name=".ClubInformations" />
     </application>
 
 </manifest>
